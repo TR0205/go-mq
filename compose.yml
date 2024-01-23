@@ -1,9 +1,16 @@
-version: '3'
+version: "3"
 services:
-  go:
-    image: golang:1.21.5-bullseye
-    ports:
-      - 8080:80
-    volumes:
-      - .:/go/src/app
-    tty: true
+    go:
+        image: golang:1.21.5-bullseye
+        ports:
+            - 8080:80
+        volumes:
+            - .:/go/src/app
+        tty: true
+    mq:
+        image: rabbitmq:3.12.12-management
+        ports:
+            - 15672:15672
+        environment:
+            RABBITMQ_DEFAULT_USER: user
+            RABBITMQ_DEFAULT_PASS: password

@@ -14,6 +14,8 @@ down-v:
 restart:
 	@make down
 	@make up
+ps:
+	docker compose ps
 go:
 	docker compose exec go bash
 main:
